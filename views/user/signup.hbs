@@ -1,0 +1,58 @@
+<div style="margin-top: 130px;" class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-header" style="float: left">
+				<h4 class="modal-title" id="myModalLabel">Register</h4>
+			</div>
+
+			<div class="modal-body">
+				{{#if hasErrors}}
+				<div class='alert alert-danger'>
+					{{# each messages }}
+						<p>{{this}}</p>
+					{{/each}}
+				</div>
+				{{/if}}
+				<form action='/user/signup' method='post' role="form">
+					<div class="form-group">
+						<div class="input-group">
+							<input type="text" class="form-control" id="username" name="username" placeholder="Login">
+							<label for="username" class="input-group-addon glyphicon glyphicon-user"></label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+							<label for="password" class="input-group-addon glyphicon glyphicon-lock"></label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<input type="email" class="form-control" id="email" name="email" placeholder="Email">
+							<label for="email" class="input-group-addon glyphicon glyphicon-lock"></label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="input-group">
+							<input type="text" class="form-control" id="firstname" name="firstname" placeholder="Firstname">
+							<label for="firstname" class="input-group-addon glyphicon glyphicon-lock"></label>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<div class="input-group">
+							<input type="text" class="form-control" id="lastname" name="lastname" placeholder="lastname">
+							<label for="lastname" class="input-group-addon glyphicon glyphicon-lock"></label>
+						</div>
+					</div>
+					<input type='hidden' name='_csrf' value='{{csrfToken}}'>
+			</div> 
+			<div class="modal-footer">
+				<button type="submit" class="form-control btn btn-primary">Sign up</button>
+
+				</form>
+			</div>
